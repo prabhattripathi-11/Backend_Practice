@@ -1,0 +1,17 @@
+<%- include('../partials/head') %>
+<body class="min-h-screen bg-slate-50 text-slate-900">
+  <div class="mx-auto max-w-6xl px-4 py-10">
+    <%- include('../partials/header') %>
+
+    <main class="rounded-3xl bg-white p-8 shadow-sm ring-1 ring-slate-200">
+      <h2 class="text-3xl font-semibold text-slate-900">Edit Home</h2>
+      <p class="mt-3 text-slate-600">Edit form is ready for the next step. The edit action is still pending.</p>
+      <% if (home) { %>
+        <div class="mt-6 rounded-2xl bg-slate-50 p-6">
+          <p class="text-sm text-slate-600">Editing: <span class="font-semibold text-slate-900"><%= home.title %></span></p>
+        </div>
+      <% } %>
+    </main>
+  </div>
+</body>
+</html>

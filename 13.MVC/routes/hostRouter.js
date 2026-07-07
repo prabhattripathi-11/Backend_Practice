@@ -1,21 +1,9 @@
-const express = require("express");
-const path = require("path");
-
+const express = require('express');
 const hostRouter = express.Router();
 
-const rootDir = require("../utils/pathUtils");
+const adminController = require('../controller/admin');
 
-const homeRegister = [];
-
-hostRouter.get("/add-home", (req, res, next) => {
-  res.render('addhome');
-});
-
-hostRouter.post("/add-home", (req, res, next) => {
-  console.log("Home added Successfully", req.body, req.body.title);
-  homeRegister.push(req.body.title);
-  res.render('homeadded');
-});
+hostRouter.get('/add-home', adminController.getAddHome);
+hostRouter.post('/add-home', adminController.postAddHome);
 
 exports.hostRouter = hostRouter;
-exports.homeRegister = homeRegister;

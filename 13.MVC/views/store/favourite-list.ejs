@@ -1,0 +1,25 @@
+<%- include('../partials/head') %>
+<body class="min-h-screen bg-slate-50 text-slate-900">
+  <div class="mx-auto max-w-6xl px-4 py-10">
+    <%- include('../partials/header') %>
+
+    <main class="rounded-3xl bg-white p-8 shadow-sm ring-1 ring-slate-200">
+      <h2 class="text-3xl font-semibold text-slate-900">Favourite Homes</h2>
+      <p class="mt-3 text-slate-600">Favourite logic is still pending, so this page is a placeholder for now.</p>
+      <% if (homes.length > 0) { %>
+        <div class="mt-6 grid gap-4 md:grid-cols-2">
+          <% homes.forEach(home => { %>
+            <div class="rounded-2xl border border-slate-200 p-5">
+              <h3 class="text-lg font-semibold text-slate-900"><%= home.title %></h3>
+              <p class="mt-2 text-sm text-slate-600"><%= home.location %></p>
+              <p class="mt-2 text-sm text-slate-600">₹<%= home.price %> / night</p>
+            </div>
+          <% }) %>
+        </div>
+      <% } else { %>
+        <p class="mt-6 text-sm text-slate-500">No favourite homes yet.</p>
+      <% } %>
+    </main>
+  </div>
+</body>
+</html>

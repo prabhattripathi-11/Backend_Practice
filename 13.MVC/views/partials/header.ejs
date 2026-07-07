@@ -1,3 +1,17 @@
 <header class="mb-8 rounded-2xl bg-white p-6 shadow-sm">
+  <div class="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+    <div>
       <h1 class="text-3xl font-bold text-red-500">Here are our registered Homes</h1>
-    </header>
+      <p class="mt-1 text-sm text-slate-500">Browse store pages or manage admin pages.</p>
+    </div>
+    <nav class="flex flex-wrap gap-2">
+      <a href="/store/home-list" class="rounded-full px-4 py-2 text-sm font-semibold transition <%= activeTab === 'home-list' ? 'bg-sky-600 text-white' : 'bg-slate-100 text-slate-700 hover:bg-slate-200' %>">Home List</a>
+      <a href="/store/home-detail" class="rounded-full px-4 py-2 text-sm font-semibold transition <%= activeTab === 'home-detail' ? 'bg-sky-600 text-white' : 'bg-slate-100 text-slate-700 hover:bg-slate-200' %>">Home Detail</a>
+      <a href="/store/favourite-list" class="rounded-full px-4 py-2 text-sm font-semibold transition <%= activeTab === 'favourite-list' ? 'bg-sky-600 text-white' : 'bg-slate-100 text-slate-700 hover:bg-slate-200' %>">Favourites</a>
+      <a href="/store/reserve" class="rounded-full px-4 py-2 text-sm font-semibold transition <%= activeTab === 'reserve' ? 'bg-sky-600 text-white' : 'bg-slate-100 text-slate-700 hover:bg-slate-200' %>">Reserve</a>
+      <a href="/store/bookings" class="rounded-full px-4 py-2 text-sm font-semibold transition <%= activeTab === 'bookings' ? 'bg-sky-600 text-white' : 'bg-slate-100 text-slate-700 hover:bg-slate-200' %>">Bookings</a>
+      <a href="/host/add-home" class="rounded-full px-4 py-2 text-sm font-semibold transition <%= activeTab === 'add-home' ? 'bg-sky-600 text-white' : 'bg-slate-100 text-slate-700 hover:bg-slate-200' %>">Add Home</a>
+      <a href="/admin/home-list" class="rounded-full px-4 py-2 text-sm font-semibold transition <%= activeTab === 'admin-home-list' || activeTab === 'edit-home' || activeTab === 'delete-home' ? 'bg-sky-600 text-white' : 'bg-slate-100 text-slate-700 hover:bg-slate-200' %>">Admin</a>
+    </nav>
+  </div>
+</header>

@@ -1,15 +1,18 @@
 const express = require('express');
 const userRouter = express.Router();
 
-const path = require("path");
+const storeController = require('../controller/store');
+const adminController = require('../controller/admin');
 
-const rootDir = require("../utils/pathUtils");
+userRouter.get('/', storeController.getHomeList);
+userRouter.get('/store/home-list', storeController.getHomeList);
+userRouter.get('/store/home-detail', storeController.getHomeDetail);
+userRouter.get('/store/favourite-list', storeController.getFavouriteList);
+userRouter.get('/store/reserve', storeController.getReserve);
+userRouter.get('/store/bookings', storeController.getBookings);
 
-const { homeRegister } = require("./hostRouter")
-
-userRouter.get("/", (req, res, next) => {
-  console.log(homeRegister);
-  res.render('home', { homeRegister });
-});
+userRouter.get('/admin/home-list', adminController.getAdminHomeList);
+userRouter.get('/admin/edit-home', adminController.getEditHome);
+userRouter.get('/admin/delete-home', adminController.getDeleteHome);
 
 module.exports = userRouter;

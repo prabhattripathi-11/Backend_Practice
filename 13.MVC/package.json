@@ -6,6 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "npm run build:css && nodemon app.js",
+    "dev": "nodemon app.js",
     "build:css": "tailwindcss -i ./src/output.css -o ./public/output.css",
     "watch:css": "tailwindcss -i ./src/output.css -o ./public/output.css --watch"
   },
@@ -21,7 +22,6 @@
     "autoprefixer": "^10.5.0",
     "ejs": "^6.0.1",
     "express": "^5.2.1",
-    "exxpress": "^1.0.0",
     "postcss": "^8.5.15",
     "tailwindcss": "^4.3.1"
   }
